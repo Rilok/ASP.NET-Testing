@@ -1,0 +1,81 @@
+﻿@using Bookshop.Ultility
+@model Bookshop.Models.Publisher
+@{
+    ViewData["Title"] = "Szczegóły";
+}
+<br />
+<h2>Szczegóły wydawcy</h2>
+<hr />
+
+<div class="form-border">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-2">
+                <label asp-for="name" class="custom-label"></label>
+            </div>
+            <div class="col-sm-4">
+                <input asp-for="name" disabled class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-2">
+                <label asp-for="street" class="custom-label"></label>
+            </div>
+            <div class="col-sm-4">
+                <input asp-for="street" disabled class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-2">
+                <label asp-for="streetNumber" class="custom-label"></label>
+            </div>
+            <div class="col-sm-4">
+                <input asp-for="streetNumber" disabled class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-2">
+                <label asp-for="postalCode" class="custom-label"></label>
+            </div>
+            <div class="col-sm-4">
+                <input asp-for="postalCode" disabled class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-2">
+                <label asp-for="city" class="custom-label"></label>
+            </div>
+            <div class="col-sm-4">
+                <input asp-for="city" disabled class="form-control" />
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-sm-2">
+                <label asp-for="phone" class="custom-label"></label>
+            </div>
+            <div class="col-sm-4">
+                <input asp-for="phone" disabled class="form-control" />
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        @if (User.IsInRole(StaticDetails.AdminUser))
+        {
+            <a asp-action="Edit" asp-route-id="@Model.id" class="btn btn-sm btn-primary">Edytuj</a>
+        }
+        <a asp-action="Index" class="btn btn-sm btn-success">Powrót</a>
+    </div>
+</div>
+
+

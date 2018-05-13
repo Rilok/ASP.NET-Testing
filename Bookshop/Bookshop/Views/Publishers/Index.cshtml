@@ -1,0 +1,68 @@
+﻿@using Bookshop.Ultility
+@model IEnumerable<Bookshop.Models.Publisher>
+@inject SignInManager<ApplicationUser> SignInManager
+@{
+    ViewData["Title"] = "Wydawcy";
+}
+
+@Html.Partial("_SecurityPartial")
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <br />
+    <h2>Zarządzanie wydawcami</h2>
+    <br />
+
+    <div class="form-border">
+        <p>
+            @if (User.IsInRole(StaticDetails.AdminUser))
+            {
+                <a class="btn btn-sm btn-primary" asp-action="Create">Utwórz</a>
+            }
+        </p>
+        <br />
+
+        <form asp-action="Index" method="get" class="form-inline">
+            <div class="input-group">
+                <input name="search" class="form-control input-sm" placeholder="@ViewData["search"]" />
+                <span class="input-group-btn">
+                    <input type="submit" value="Szukaj" class="btn btn-default btn-sm" />
+                </span>
+            </div>
+        </form>
+
+        <table class="table table-hover table-condensed">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(m => m.name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(m => m.city)
+                </th>
+
+
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(m => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => item.city)
+                    </td>
+                    <td>
+                        @if (User.IsInRole(StaticDetails.AdminUser))
+                        {
+                            <a asp-action="Edit" asp-route-id="@item.id" class="btn btn-primary btn-sm">Edytuj</a>
+                            <a asp-action="Delete" asp-route-id="@item.id" class="btn btn-danger btn-sm">Usuń</a>
+
+                        }
+                        <a asp-action="Details" asp-route-id="@item.id" class="btn btn-info btn-sm">Szczegóły</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+}
+

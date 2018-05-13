@@ -1,0 +1,53 @@
+﻿@model ApplicationUser
+@{
+    ViewData["Title"] = "Szczegóły";
+}
+
+<br />
+<h2>Szczegóły użytkownika</h2>
+<hr />
+
+<div class="form-border">
+    <fieldset disabled>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label asp-for="Name" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="Name" disabled class="form-control" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset disabled>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label asp-for="Surname" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="Surname" disabled class="form-control" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset disabled>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label asp-for="Email" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="Email" disabled class="form-control" />
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <br/>
+    <div class="form-group">
+        <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-sm btn-primary">Edytuj</a>
+        <a asp-action="Index" class="btn btn-sm btn-success">Powrót</a>
+
+    </div>
+</div>

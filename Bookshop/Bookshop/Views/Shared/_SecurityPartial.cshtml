@@ -1,0 +1,8 @@
+﻿@using Bookshop.Ultility
+
+@inject SignInManager<ApplicationUser> SignInManager
+@if (!SignInManager.IsSignedIn(User))
+{
+    <h1>BRAK DOSTĘPU!</h1>
+    <h2>Zaloguj się do systemu!</h2>
+}

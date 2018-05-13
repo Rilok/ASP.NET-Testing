@@ -1,0 +1,51 @@
+﻿@model Bookshop.Models.Book
+@{
+    ViewData["Title"] = "Dodawanie książki";
+}
+<br/>
+<h2>Dodaj książkę</h2>
+<hr/>
+
+<form asp-action="Create">
+    <div class="form-border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label asp-for="name" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="name" class="form-control"/>
+                </div>
+            </div>
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label asp-for="genre" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="genre" class="form-control"/>
+                </div>
+            </div>
+            <span asp-validation-for="genre" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label asp-for="year" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="year" class="form-control"/>
+                </div>
+            </div>
+            <span asp-validation-for="year" class="text-danger"></span>
+        </div>
+        <br/>
+        <div class="form-group">
+            <input type="submit" value="Dodaj" class="btn btn-sm btn-primary"/>
+            <a asp-action="Index" class="btn btn-sm btn-success">Powrót</a>
+        </div>
+    </div>
+</form>

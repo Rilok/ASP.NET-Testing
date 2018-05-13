@@ -1,0 +1,86 @@
+﻿@model Bookshop.Models.Publisher
+@{
+    ViewData["Title"] = "Dodawanie wydawcy";
+}
+
+<br />
+<h2>Dodaj wydawcę</h2>
+<hr />
+
+<form asp-action="Create">
+    <div class="form-border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label asp-for="name" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="name" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="name" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label asp-for="street" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="street" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="street" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label asp-for="streetNumber" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="streetNumber" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="streetNumber" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label asp-for="postalCode" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="postalCode" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="postalCode" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label asp-for="city" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="city" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="city" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-sm-2">
+                    <label asp-for="phone" class="custom-label"></label>
+                </div>
+                <div class="col-sm-4">
+                    <input asp-for="phone" class="form-control" />
+                </div>
+            </div>
+            <span asp-validation-for="phone" class="text-danger"></span>
+        </div>
+        <br />
+        <div class="form-group">
+            <input type="submit" value="Dodaj" class="btn btn-sm btn-primary" />
+            <a asp-action="Index" class="btn btn-sm btn-success">Powrót</a>
+        </div>
+    </div>
+</form>
+
